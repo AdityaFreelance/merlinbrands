@@ -602,11 +602,11 @@
 }
 
 @media screen and (max-width:992px) {
-    .contact-wrapper-cover {
+    /* .contact-wrapper-cover {
         border: none;
         padding: 0px;
         background-color: transparent;
-    }
+    } */
 
     .contact-wrapper-cover .col-12 {
         padding-inline: 0px;
@@ -614,7 +614,7 @@
 
     .contact-cover-box {
         padding: 32px 24px;
-        height: 400px;
+        height: auto !important;
         border-radius: 24px;
         background-position: center top;
         margin-bottom: 24px;
