@@ -1,4 +1,15 @@
 $(document).ready(function () {
+    // Banner Slider
+    $('.banner-slider-row').slick({
+        dots: true,
+        arrows: false,
+        infinite: true,
+        speed: 800,
+        autoplay: false,
+        autoplaySpeed: 3000,
+        pauseOnHover: false,
+    });
+
     // Client Logo Slider
     $('.client-wrapper-row').slick({
         slidesToShow: 7,
@@ -51,36 +62,52 @@ $(document).ready(function () {
         nextArrow: '<button type="button" class="slick-next"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.29006 15.88L13.1701 12L9.29006 8.11998C8.90006 7.72998 8.90006 7.09998 9.29006 6.70998C9.68006 6.31998 10.3101 6.31998 10.7001 6.70998L15.2901 11.3C15.6801 11.69 15.6801 12.32 15.2901 12.71L10.7001 17.3C10.3101 17.69 9.68006 17.69 9.29006 17.3C8.91006 16.91 8.90006 16.27 9.29006 15.88Z" fill="white"/></svg></button>'
     });
 
-    // Product Range Slider Initialization
-    function initProductSlider() {
-        $('.poduct-range-containerBox .row').slick({
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 3000,
-            infinite: true,
-            arrows: false,
-            dots: false,
-            responsive: [
-                {
-                    breakpoint: 992,
-                    settings: {
-                        slidesToShow: 2,
-                    }
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 1,
-                    }
-                }
-            ]
-        });
+    // Product Range Horizontal Scroll Initialization
+    function updateProductHorizontalScroll() {
+        const $wrapper = $('.product-range-wrapper');
+        const $stickyContainer = $('.product-range-sticky-container');
+        const $activeContent = $('.poduct-range-containerBox.active');
+        const $activeRow = $activeContent.find('.row');
+
+        if (!$activeRow.length) return;
+
+        // Temporarily reset transform to get accurate scrollWidth
+        const currentTransform = $activeRow.css('transform');
+        $activeRow.css('transform', 'none');
+        const scrollWidth = $activeRow[0].scrollWidth;
+        const clientWidth = $activeRow[0].clientWidth;
+        const totalHorizontalScroll = scrollWidth - clientWidth;
+        $activeRow.css('transform', currentTransform);
+
+        if (totalHorizontalScroll <= 0) {
+            $wrapper.css('height', 'auto');
+            $activeRow.css('transform', 'translateX(0)');
+            return;
+        }
+
+        // Set section height to provide scrolling space
+        // Higher scrollFactor = slower/longer horizontal scroll
+        const scrollFactor = 2;
+        const scrollDistance = totalHorizontalScroll * scrollFactor;
+        
+        $wrapper.css('height', (window.innerHeight + scrollDistance) + 'px');
+
+        const wrapperRect = $wrapper[0].getBoundingClientRect();
+        
+        // Progress starts when wrapper hits top of viewport
+        // Progress = how much of scrollDistance has passed
+        let progress = -wrapperRect.top / scrollDistance;
+        progress = Math.max(0, Math.min(1, progress));
+
+        const translateX = -progress * totalHorizontalScroll;
+        $activeRow.css('transform', `translateX(${translateX}px)`);
     }
 
-    // Set default active tab and THEN init slider
+    $(window).on('scroll resize', updateProductHorizontalScroll);
+
+    // Set default active tab
     $('#best-seller-tab-content').addClass('active');
-    initProductSlider();
+    setTimeout(updateProductHorizontalScroll, 100);
 
     // Product Range Tab Functionality
     $('.product-range-nav-tab-item').on('click', function (e) {
@@ -101,10 +128,8 @@ $(document).ready(function () {
             $('#bundles-tab-content').addClass('active');
         }
 
-        // Full refresh of slick slider to recalculate dimensions properly after becoming visible
-        setTimeout(function () {
-            $('.poduct-range-containerBox.active .row').slick('refresh');
-        }, 50);
+        // Update scroll state after switching tab
+        setTimeout(updateProductHorizontalScroll, 50);
     });
 
     // Testimonial Slider

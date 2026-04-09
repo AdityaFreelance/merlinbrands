@@ -274,8 +274,137 @@ a {
     color: #fff;
 }
 
-.custom-btn.customBtn svg path {
-    /* Path colors to be added by user or theme */
+/* Banner-wrapper Css Start */
+.banner-slider-row {
+    position: relative;
+}
+
+.banner-slider-box {
+    background-image: url(../images/banner-wrapper.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top right;
+    padding-block: 60px;
+}
+
+/* Slick Dots Styling */
+.banner-slider-row .slick-dots {
+    bottom: 10px;
+    width: 100%;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    gap: 0px 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.banner-slider-row .slick-dots li {
+    margin: 0 6px;
+    display: inline-block;
+}
+
+.banner-slider-row .slick-dots li button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 40px;
+    height: 4px;
+    padding: 0;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: #CDCDCD4D;
+    border-radius: 5px;
+}
+
+.banner-slider-row .slick-dots li button::before {
+    display: none !important;
+}
+
+.banner-slider-row .slick-dots li.slick-active button {
+    opacity: 1;
+    background: #fff;
+}
+
+.banner-logo {
+    margin-bottom: 36px;
+}
+
+.banner-logo img {
+    height: 80px;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 70px;
+    letter-spacing: 0.26px;
+    margin-bottom: 36px;
+    color: #fff;
+}
+
+.banner-heading p {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0.26px;
+    vertical-align: middle;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+span.banner-box-ixon {
+    width: 28px;
+    height: 28px;
+    background-color: #fff;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.banner-services-box {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 36px;
+    letter-spacing: 0.26px;
+    vertical-align: middle;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 0px 12px;
+}
+
+.banner-services {
+    margin-bottom: 30px;
+}
+
+.banner-services ul.list-unstyled {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+}
+
+.banner-services {
+    margin-bottom: 63px;
+}
+
+.banner-btn-box .custom-btn {
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+.banner-btn-box {
+    display: flex;
+    align-items: center;
+    gap: 24px;
 }
 
 /* about-stats-wrapper Css Start */
@@ -783,6 +912,7 @@ span.why-choose-icon {
 
 /* product-box Css Start */
 .product-box {
+    box-shadow: 0px 4px 14px 0px #0000001A;
     background-color: #F3EDFF;
     border-radius: 12px;
     overflow: hidden;
@@ -1054,13 +1184,39 @@ p.product-range-note-content span {
     font-weight: 600;
 }
 
-.poduct-range-containerBox .slick-list.draggable {
-    padding-right: 10%;
+.poduct-range-containerBox .row {
+    flex-wrap: nowrap;
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: transform;
 }
 
+.poduct-range-containerBox {
+    overflow: hidden;
+}
+
+.poduct-range-containerBox .row>[class*="col-"] {
+    flex: 0 0 auto;
+    width: 31.25%;
+    /* Show 3.2 items on desktop */
+padding-bottom: 40px;
+}
 section.product-range-wrapper {
-    padding-block: 40px;
     background-color: #fff;
+    position: relative;
+    z-index: 10;
+}
+
+.product-range-sticky-container {
+    position: sticky;
+    top: 0;
+    /* height: 100vh; */
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: 20px;
+    overflow: hidden;
 }
 
 /* product-box Css End */
