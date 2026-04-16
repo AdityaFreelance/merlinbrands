@@ -44,6 +44,227 @@
     z-index: 10;
 }
 
+.personalisation-popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.96);
+    z-index: 10002;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.personalisation-popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.personalisation-popup-container {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 16px 12px 28px;
+    background: #fff;
+    color: #fff;
+}
+
+.personalisation-popup-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: 0;
+    padding: 0;
+    background: transparent;
+    color: #4a3d49;
+    font-family: "Fredoka", sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+
+.personalisation-popup-badge {
+    margin-bottom: 12px;
+}
+
+.personalisation-popup-header h2 {
+    background: none;
+    color: #0b5b97;
+    font-size: 28px;
+    line-height: 36px;
+    margin-bottom: 8px;
+}
+
+.personalisation-popup-header p {
+    color: #a4a0a6;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 16px;
+}
+
+.personalisation-popup-slider-card {
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    margin-bottom: 16px;
+}
+
+.personalisation-popup-slider-cover .preview-slider-box {
+    background: #ececec;
+}
+
+.personalisation-popup-slider-cover .preview-slider-image {
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+.personalisation-popup-slider-cover .preview-slider-image img {
+    width: auto;
+    max-width: 100%;
+    max-height: 210px;
+}
+
+.personalisation-popup-nav {
+    position: relative;
+    background: #f4f4f4;
+    padding: 18px 54px 12px;
+}
+
+.personalisation-popup-nav .slider-nav-box {
+    width: 48px;
+    height: 48px;
+    background: #fff;
+    border: 1px solid #fff;
+    border-radius: 4px;
+}
+
+.personalisation-popup-nav .slick-current .slider-nav-box {
+    border-color: #193f77;
+}
+
+.personalisation-popup-nav .slick-arrow {
+    width: 32px;
+    height: 32px;
+    border: 0;
+    border-radius: 8px;
+    background: #1f7a8c;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.personalisation-popup-nav .slick-arrow::before {
+    display: none;
+}
+
+.personalisation-popup-nav .slick-prev {
+    left: 14px;
+}
+
+.personalisation-popup-nav .slick-next {
+    right: 14px;
+}
+
+.personalisation-popup-content h3 {
+    color: #122544;
+    font-size: 28px;
+    line-height: 34px;
+    margin-bottom: 16px;
+}
+
+.personalisation-popup-form label {
+    display: inline-flex;
+    width: 100%;
+    color: #5f5961;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 8px;
+}
+
+.personalisation-popup-form label span {
+    color: #ff4d4d;
+}
+
+.personalisation-popup-form .form-control {
+    height: 44px;
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    margin-bottom: 20px;
+}
+
+.personalisation-upload-box {
+    margin-bottom: 12px;
+}
+
+.personalisation-upload-label {
+    border: 1px solid #d8d8d8;
+    border-radius: 4px;
+    background: #fff;
+    padding: 20px 16px;
+    min-height: 120px;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 4px;
+    color: #5f5961 !important;
+    cursor: pointer;
+}
+
+.personalisation-upload-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.personalisation-upload-label strong {
+    color: #1f7a8c;
+    font-weight: 600;
+}
+
+.personalisation-upload-label small {
+    color: #6e6a70;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.personalisation-popup-note {
+    color: #8f8b91;
+    font-size: 12px;
+    line-height: 16px;
+    margin-bottom: 16px;
+}
+
+.personalisation-popup-note span {
+    color: #0b5b97;
+    font-weight: 600;
+}
+
+.personalisation-popup-submit {
+    width: 100%;
+    border: 0;
+    min-height: 48px;
+    background: #1f7a8c !important;
+    color: #fff !important;
+}
+
+@media (min-width: 769px) {
+    .personalisation-popup-overlay {
+        display: none;
+    }
+}
+
 /* Header Section */
 .popup-header-flex {
     display: flex;

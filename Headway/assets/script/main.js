@@ -1,4 +1,9 @@
 $(document).ready(function () {
+    const $personalisationPopup = $('#personalisation-popup-overlay');
+    const $personalisationTrigger = $('.mobile-personalisation-trigger');
+    const $personalisationClose = $('#personalisation-popup-close');
+    let isPopupSliderReady = false;
+
     // Banner Slider
     $('.banner-slider-row').slick({
         dots: true,
@@ -57,9 +62,74 @@ $(document).ready(function () {
         slidesToScroll: 1,
         asNavFor: '.slider-for',
         dots: false,
+        arrows:true,
         focusOnSelect: true,
         prevArrow: '<button type="button" class="slick-prev"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.71 15.88L10.83 12L14.71 8.11998C15.1 7.72998 15.1 7.09998 14.71 6.70998C14.32 6.31998 13.69 6.31998 13.3 6.70998L8.70998 11.3C8.31998 11.69 8.31998 12.32 8.70998 12.71L13.3 17.3C13.69 17.69 14.32 17.69 14.71 17.3C15.09 16.91 15.1 16.27 14.71 15.88Z" fill="white"/></svg></button>',
         nextArrow: '<button type="button" class="slick-next"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.29006 15.88L13.1701 12L9.29006 8.11998C8.90006 7.72998 8.90006 7.09998 9.29006 6.70998C9.68006 6.31998 10.3101 6.31998 10.7001 6.70998L15.2901 11.3C15.6801 11.69 15.6801 12.32 15.2901 12.71L10.7001 17.3C10.3101 17.69 9.68006 17.69 9.29006 17.3C8.91006 16.91 8.90006 16.27 9.29006 15.88Z" fill="white"/></svg></button>'
+    });
+
+    function initPersonalisationPopupSlider() {
+        if (isPopupSliderReady) return;
+
+        $('.slider-for-popup').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            fade: true,
+            asNavFor: '.slider-nav-popup'
+        });
+
+        $('.slider-nav-popup').slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            asNavFor: '.slider-for-popup',
+            dots: false,
+            arrows: true,
+            focusOnSelect: true,
+            prevArrow: '<button type="button" class="slick-prev"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.7583 14.4084L7.34995 10.0001L11.7583 5.5918" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
+            nextArrow: '<button type="button" class="slick-next"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.2417 5.5918L12.65 10.0001L8.2417 14.4084" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>'
+        });
+
+        isPopupSliderReady = true;
+    }
+
+    function openPersonalisationPopup() {
+        $personalisationPopup.addClass('active');
+        $('body, html').css('overflow', 'hidden');
+        initPersonalisationPopupSlider();
+        if (isPopupSliderReady) {
+            $('.slider-for-popup, .slider-nav-popup').slick('setPosition');
+        }
+    }
+
+    function closePersonalisationPopup() {
+        $personalisationPopup.removeClass('active');
+        $('body, html').css('overflow', '');
+    }
+
+    $personalisationTrigger.on('click', function (e) {
+        e.preventDefault();
+        openPersonalisationPopup();
+    });
+
+    $personalisationClose.on('click', function () {
+        closePersonalisationPopup();
+    });
+
+    $personalisationPopup.on('click', function (e) {
+        if (e.target === this) {
+            closePersonalisationPopup();
+        }
+    });
+
+    $('.personalisation-popup-form').on('submit', function (e) {
+        e.preventDefault();
+    });
+
+    $(document).on('keydown', function (e) {
+        if (e.key === 'Escape' && $personalisationPopup.hasClass('active')) {
+            closePersonalisationPopup();
+        }
     });
 
     // Product Range Horizontal Scroll Initialization

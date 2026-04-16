@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Attach to Get Bulk Enquiry buttons
-    const bulkEnquiryBtns = document.querySelectorAll('.customBtn');
+    const bulkEnquiryBtns = document.querySelectorAll('.customBtn:not(.mobile-personalisation-trigger):not(.personalisation-popup-submit)');
     bulkEnquiryBtns.forEach(btn => {
         btn.addEventListener('click', function(e) {
             e.preventDefault();

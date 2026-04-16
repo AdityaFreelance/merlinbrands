@@ -934,7 +934,7 @@
                             <p>
                                 See how every child’s name comes to life on our thoughtfully made products
                             </p>
-                            <a href="#" class="custom-btn customBtn">
+                            <a href="#" class="custom-btn customBtn mobile-personalisation-trigger">
                                 Try Personalisation Now
                             </a>
                         </div>
@@ -3771,6 +3771,119 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Slick Slider JS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <div class="personalisation-popup-overlay" id="personalisation-popup-overlay">
+        <div class="personalisation-popup-container">
+            <button class="personalisation-popup-back" id="personalisation-popup-close" type="button">
+                <span aria-hidden="true">&#8592;</span>
+                Back to home
+            </button>
+            <div class="personalisation-popup-header">
+                <div class="personalisation-popup-pill">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_147_9127)">
+                            <path
+                                d="M4.74997 4.81262L4.29697 6.26562L3.85947 4.81262L2.40647 4.35962L3.85947 3.92212L4.29697 2.45312L4.74997 3.92212L6.20297 4.35962L4.74997 4.81262ZM7.28147 4.01562L7.06247 4.75012L6.81247 4.01562L6.09347 3.78112L6.81247 3.56212L7.06247 2.84312L7.28147 3.56212L8.00047 3.78112L7.28147 4.01562ZM0.140466 12.0001L9.09347 3.31262C9.15597 3.23462 9.24997 3.18762 9.35897 3.18762C9.49947 3.17212 9.64047 3.21913 9.74947 3.32812C9.79647 3.35962 9.85897 3.42212 9.95247 3.50012C10.1245 3.65662 10.312 3.84412 10.4525 4.03162C10.515 4.12562 10.5465 4.20362 10.5465 4.28162C10.562 4.43812 10.515 4.57862 10.4215 4.67212L1.46847 13.3911C1.39047 13.4691 1.29647 13.5006 1.18697 13.5161C1.04647 13.5316 0.905466 13.4846 0.796466 13.3756C0.749466 13.3286 0.686966 13.2816 0.593466 13.1881C0.421466 13.0476 0.233966 12.8601 0.108966 12.6566C0.046466 12.5626 0.014966 12.4691 -0.000534015 12.3911C-0.016034 12.2346 0.030966 12.1096 0.139966 12.0006L0.140466 12.0001ZM7.32797 5.68762L7.98447 6.35962L10.0625 4.34412L9.40597 3.65663L7.32797 5.68762ZM2.96897 6.57812L2.76597 7.29712L2.54697 6.57812L1.82797 6.34363L2.54697 6.12462L2.76597 5.39012L2.96897 6.12462L3.71897 6.34363L2.96897 6.57812ZM10.25 6.03162L10.4845 6.76612L11.2035 6.98513L10.4845 7.21962L10.25 7.93862L10.0155 7.21962L9.29647 6.98513L10.0155 6.76612L10.25 6.03162Z"
+                                fill="#F16866" />
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_147_9127">
+                                <rect width="16" height="16" fill="white" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    See the Magic
+                </div>
+                <h2>Personalisation Preview</h2>
+                <p>
+                    See how your brand name or logo looks on our premium, everyday-use products.
+                </p>
+            </div>
+            <div class="personalisation-popup-slider-card">
+                <div class="preview-slider-box-cover personalisation-popup-slider-cover">
+                    <div class="personalisation-popup-slider slider-for-popup">
+                        <div class="preview-slider-col">
+                            <div class="preview-slider-box">
+                                <div class="preview-slider-image">
+                                    <img src="assets/images/preview-slider-1.png" alt="image" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="preview-slider-col">
+                            <div class="preview-slider-box">
+                                <div class="preview-slider-image">
+                                    <img src="assets/images/preview-slider-1.png" alt="image" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="preview-slider-col">
+                            <div class="preview-slider-box">
+                                <div class="preview-slider-image">
+                                    <img src="assets/images/preview-slider-1.png" alt="image" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="preview-slider-col">
+                            <div class="preview-slider-box">
+                                <div class="preview-slider-image">
+                                    <img src="assets/images/preview-slider-1.png" alt="image" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="preview-slider-col">
+                            <div class="preview-slider-box">
+                                <div class="preview-slider-image">
+                                    <img src="assets/images/preview-slider-1.png" alt="image" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="personalisation-popup-nav slider-nav-popup">
+                    <div class="slider-nav-col">
+                        <div class="slider-nav-box">
+                            <img src="assets/images/preview-slider-dot1.png" alt="images" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="slider-nav-col">
+                        <div class="slider-nav-box">
+                            <img src="assets/images/preview-slider-dot2.png" alt="images" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="slider-nav-col">
+                        <div class="slider-nav-box">
+                            <img src="assets/images/preview-slider-dot3.png" alt="images" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="slider-nav-col">
+                        <div class="slider-nav-box">
+                            <img src="assets/images/preview-slider-dot4.png" alt="images" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="slider-nav-col">
+                        <div class="slider-nav-box">
+                            <img src="assets/images/preview-slider-dot1.png" alt="images" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="personalisation-popup-content">
+                <h3>Try It Live</h3>
+                <form action="" class="personalisation-popup-form">
+                    <div class="form-group">
+                        <label for="popup-name">
+                            Enter Your Name <span>*</span>
+                        </label>
+                        <input type="text" name="popup-name" id="popup-name" class="form-control"
+                            placeholder="Rajesh Singh">
+                    </div>
+                    <button type="submit" class="custom-btn customBtn personalisation-popup-submit">
+                        Personalize Now
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <script>
         $(document).ready(function () {

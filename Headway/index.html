@@ -937,7 +937,7 @@
                             <p>
                                 See how every child’s name comes to life on our thoughtfully made products
                             </p>
-                            <a href="#" class="custom-btn customBtn">
+                            <a href="#" class="custom-btn customBtn mobile-personalisation-trigger">
                                 Try Personalisation Now
                             </a>
                         </div>
@@ -3201,6 +3201,110 @@
     </div>
 
     <!-- jQuery -->
+    <div class="personalisation-popup-overlay" id="personalisation-popup-overlay">
+        <div class="personalisation-popup-container">
+            <button class="personalisation-popup-back" id="personalisation-popup-close" type="button">
+                <span aria-hidden="true">&#8592;</span>
+                Back to home
+            </button>
+            <div class="personalisation-popup-header">
+                <div class="preview-sub-heading personalisation-popup-badge">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <mask id="popup-badge-mask" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0"
+                            width="24" height="24">
+                            <rect width="24" height="24" fill="#D9D9D9" />
+                        </mask>
+                        <g mask="url(#popup-badge-mask)">
+                            <path
+                                d="M16.1114 12.6749L14.0287 16.0286C13.8838 16.2543 13.6777 16.3486 13.4104 16.3114C13.1432 16.2742 12.9776 16.1211 12.9134 15.8519L12.1749 12.8691L5.08066 19.9729C4.94216 20.1114 4.77066 20.1848 4.56616 20.1931C4.36183 20.2015 4.18208 20.1281 4.02691 19.9729C3.88208 19.8281 3.80966 19.6525 3.80966 19.4461C3.80966 19.2396 3.88208 19.064 4.02691 18.9191L11.1307 11.7999L8.15766 11.0614C7.8885 10.9972 7.73366 10.8331 7.69316 10.5691C7.65283 10.305 7.7455 10.1005 7.97116 9.95565L11.3249 7.88839L11.0347 3.93839C11.0077 3.66923 11.1137 3.47239 11.3529 3.34789C11.5919 3.22356 11.814 3.25048 12.0192 3.42865L15.0479 5.9769L18.7077 4.4904C18.9602 4.38256 19.1822 4.42448 19.3739 4.61615C19.5656 4.80781 19.6076 5.02998 19.4999 5.28265L18.0229 8.94215L20.5712 11.9556C20.7493 12.1608 20.7778 12.3846 20.6567 12.6269C20.5355 12.8691 20.3403 12.9767 20.0712 12.9499L16.1114 12.6749Z"
+                                fill="white" />
+                        </g>
+                    </svg>
+                    <span>See the Magic</span>
+                </div>
+                <h2>See It Come Together</h2>
+                <p>
+                    See how your brand name or logo looks on our premium, everyday-use products.
+                </p>
+            </div>
+            <div class="personalisation-popup-slider-card">
+                <div class="preview-slider-box-cover personalisation-popup-slider-cover">
+                    <div class="personalisation-popup-slider slider-for-popup">
+                        <div class="preview-slider-col">
+                            <div class="preview-slider-box">
+                                <div class="preview-slider-image">
+                                    <img src="assets/images/preview-slider-1.png" alt="image" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="preview-slider-col">
+                            <div class="preview-slider-box">
+                                <div class="preview-slider-image">
+                                    <img src="assets/images/preview-slider-1.png" alt="image" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="preview-slider-col">
+                            <div class="preview-slider-box">
+                                <div class="preview-slider-image">
+                                    <img src="assets/images/preview-slider-1.png" alt="image" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="preview-slider-col">
+                            <div class="preview-slider-box">
+                                <div class="preview-slider-image">
+                                    <img src="assets/images/preview-slider-1.png" alt="image" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="preview-slider-col">
+                            <div class="preview-slider-box">
+                                <div class="preview-slider-image">
+                                    <img src="assets/images/preview-slider-1.png" alt="image" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="personalisation-popup-nav slider-nav-popup">
+                    <div class="slider-nav-col"><div class="slider-nav-box"><img src="assets/images/preview-slider-dot1.png" alt="images" class="img-fluid"></div></div>
+                    <div class="slider-nav-col"><div class="slider-nav-box"><img src="assets/images/preview-slider-dot2.png" alt="images" class="img-fluid"></div></div>
+                    <div class="slider-nav-col"><div class="slider-nav-box"><img src="assets/images/preview-slider-dot3.png" alt="images" class="img-fluid"></div></div>
+                    <div class="slider-nav-col"><div class="slider-nav-box"><img src="assets/images/preview-slider-dot4.png" alt="images" class="img-fluid"></div></div>
+                    <div class="slider-nav-col"><div class="slider-nav-box"><img src="assets/images/preview-slider-dot1.png" alt="images" class="img-fluid"></div></div>
+                </div>
+            </div>
+            <div class="personalisation-popup-content">
+                <h3>Try It Live</h3>
+                <form action="" class="personalisation-popup-form">
+                    <div class="form-group">
+                        <label for="popup-name">Enter Your Name <span>*</span></label>
+                        <input type="text" name="popup-name" id="popup-name" class="form-control" placeholder="Rajesh Singh">
+                    </div>
+                    <div class="form-group">
+                        <label for="popup-logo">Upload Your Logo</label>
+                        <div class="personalisation-upload-box">
+                            <input type="file" id="popup-logo" name="popup-logo" accept=".jpg,.jpeg,.png,.webp,.svg" hidden>
+                            <label for="popup-logo" class="personalisation-upload-label">
+                                <span class="personalisation-upload-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 16V8M12 8L9 11M12 8L15 11M5 16.5V17.5C5 18.0304 5.21071 18.5391 5.58579 18.9142C5.96086 19.2893 6.46957 19.5 7 19.5H17C17.5304 19.5 18.0391 19.2893 18.4142 18.9142C18.7893 18.5391 19 18.0304 19 17.5V16.5" stroke="#0B3C5D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
+                                <strong>Click to upload</strong> or drag and drop
+                                <small>Supported format - JPEG, PNG</small>
+                                <small>File Size: 100KB - 2 MB</small>
+                            </label>
+                        </div>
+                    </div>
+                    <p class="personalisation-popup-note"><span>Note :</span> You can also add Customized Message card at the time of checkout.</p>
+                    <button type="submit" class="custom-btn customBtn personalisation-popup-submit">Personalize Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Slick Slider JS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
